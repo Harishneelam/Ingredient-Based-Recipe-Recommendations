@@ -305,8 +305,8 @@ if button_clicked:
         html_content = html_file.read()
         components.html(html_content, width=800, height=1000)
 
-legend_html = ''.join([color_legend(color, label) for color, label in zip(color_mapping.values(), color_mapping.keys())])
-st.markdown(legend_html, unsafe_allow_html=True)
+    legend_html = ''.join([color_legend(color, label) for color, label in zip(color_mapping.values(), color_mapping.keys())])
+    st.markdown(legend_html, unsafe_allow_html=True)
 
 new_ing =  list(recommended_recipes.explode('Ingredients').Ingredients)
 
