@@ -7,3 +7,4 @@ scikit-learn==0.24.2
 numpy==1.21.2
 matplotlib==3.4.3
 plotly==5.3.1
+pickle-mixin==1.0.2
