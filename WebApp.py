@@ -28,6 +28,7 @@ with col3:
 
 st.title("Ingredient-Based Recipe Recommendations")
 df = pd.read_pickle('Recipes_data_Whole_Sim_Ingrs.pkl')
+st.write(df)
 df_exploded = df.explode('Ingredients')
 df_exploded['Value'] = 1
 df_pivot = df_exploded.groupby(['Title', 'Ingredients'])['Value'].sum().unstack(fill_value=0).reset_index()
