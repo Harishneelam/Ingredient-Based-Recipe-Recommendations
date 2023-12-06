@@ -11,6 +11,7 @@ from itertools import combinations
 import plotly.express as px
 import pandas as pd
 import streamlit.components.v1 as components
+import pickle
 
 
 col1, col2, col3 = st.columns(3)
@@ -27,7 +28,10 @@ with col3:
 
 
 st.title("Ingredient-Based Recipe Recommendations")
-df = pd.read_pickle('Recipes_data_Whole_Sim_Ingrs.pkl')
+
+with open('Recipes_data_Whole_Sim_Ingrs.pkl', 'rb') as file:
+     df = pickle.load(file)
+#df = pd.read_pickle('Recipes_data_Whole_Sim_Ingrs.pkl')
 df_exploded = df.explode('Ingredients')
 df_exploded['Value'] = 1
 df_pivot = df_exploded.groupby(['Title', 'Ingredients'])['Value'].sum().unstack(fill_value=0).reset_index()
