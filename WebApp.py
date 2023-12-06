@@ -112,7 +112,7 @@ df['Ingredients'] = df['Ingredients'].apply(lambda x: ' '.join(x))
 df = df.sample(frac=1, random_state=42).reset_index(drop=True)
 tfidf_vectorizer = TfidfVectorizer()
 tfidf_matrix = tfidf_vectorizer.fit_transform(df['Ingredients'])
-st.write(tfidf_matrix)
+
 tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf_vectorizer.get_feature_names_out())
 Ings_str = ' '.join(Ings)
 
