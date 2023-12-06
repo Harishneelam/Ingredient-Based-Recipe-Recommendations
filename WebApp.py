@@ -28,7 +28,6 @@ with col3:
 
 st.title("Ingredient-Based Recipe Recommendations")
 df = pd.read_pickle('Recipes_data_Whole_Sim_Ingrs.pkl')
-st.write(df)
 df_exploded = df.explode('Ingredients')
 df_exploded['Value'] = 1
 df_pivot = df_exploded.groupby(['Title', 'Ingredients'])['Value'].sum().unstack(fill_value=0).reset_index()
@@ -83,7 +82,7 @@ for rc in recoms:
 
 recommended_recipes= recommended_recipes.reset_index(drop=True)
 
-st.write(recommended_recipes)
+
 
 Ings = user_input_ingredients + recommended_ingredients
 import pickle
@@ -98,9 +97,11 @@ with open('sgd_classifier_Dietary.pkl', 'rb') as model_file:
      sgd_classifier_Dietary = pickle.load(model_file)
 
 Ings_str = ' '.join(Ings)
+
 classes =[]
 
 from sklearn.feature_extraction.text import TfidfVectorizer
+import pickle
 
 df = pd.read_pickle('Recipes_data_Cuisines_Sim_Ingrs.pkl')
 df['Ingredients'] = df['Ingredients'].apply(lambda x: ' '.join(x))
