@@ -56,7 +56,7 @@ def recommend_recipes(ingredients, rules):
     
     return list(unique_ingredients)
 
-ing_input = st.multiselect("Select your preferred Ingredients", ing)
+ing_input = st.multiselect("Select your preferred Ingredients", ing,default=['garlic','tomatoes','butter'])
 user_input_ingredients = list(ing_input)
 
 recommended_ingredients = []
