@@ -330,7 +330,7 @@ if yeah:
 if yes or yeah:  
     filtered_recipes = filtered_recipes.reset_index(drop=True)
     st.write(f"Here are your customized {len(filtered_recipes)} recipes:")    
-    st.dataframe(filtered_recipes)
+    st.write(filtered_recipes)
     type_counts = pd.DataFrame(filtered_recipes['Type'].value_counts())
 
    
