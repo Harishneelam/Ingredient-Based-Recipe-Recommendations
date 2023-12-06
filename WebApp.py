@@ -83,7 +83,7 @@ for rc in recoms:
 
 recommended_recipes= recommended_recipes.reset_index(drop=True)
 
-
+st.write(recommended_recipes)
 
 Ings = user_input_ingredients + recommended_ingredients
 import pickle
