@@ -313,7 +313,7 @@ new_ing =  list(recommended_recipes.explode('Ingredients').Ingredients)
 
 st.write("Do you want to customize your recipes further?")
 yes = st.checkbox('Yes',value=False)
-filtered_recipes = recommended_recipes.copy()
+filtered_recipes = recommended_recipes
 if yes:
     no_list = list(st.multiselect("Enter the Ingredients you don't want in your recipes.", new_ing))
     filtered_recipes = filtered_recipes[~filtered_recipes['Ingredients'].apply(lambda x: any(ingredient in x for ingredient in no_list))].reset_index(drop=True)
