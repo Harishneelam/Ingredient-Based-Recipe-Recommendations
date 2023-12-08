@@ -263,7 +263,7 @@ def build_network(recommended_recipes):
     
     degree_centrality = nx.degree_centrality(G)
 
-    net = Network(height="750px", width="100%", bgcolor='white', font_color='white',notebook=True)
+    net = Network(height="750px", width="100%",notebook=True)#, bgcolor='white', font_color='white',
 
 
     for node in G.nodes:
